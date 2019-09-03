@@ -1,13 +1,13 @@
-program fileNumberLoop
+subroutine fileNumberLoop
     implicit none
     integer :: ii
-    character*12 :: filename
+    character*17 :: filename
 
     do ii = 100, 103
-        write(filename,'("TEST",I4,".TXT")') ii
+        write(filename,'("Data/TEST",I4,".TXT")') ii
         open(unit=ii+100,file=filename,status='unknown')
         write(ii+100, *) "This is a test!"
         close(unit=ii+100)
     enddo
 
-end program
+end subroutine
